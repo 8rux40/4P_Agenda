@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agenda.MenuController">
-    
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agenda.MenuController">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Cadastro">
+            <items>
+              <MenuItem fx:id="miInclusao" mnemonicParsing="false" onAction="#onMiInclusaoAction" text="Inclusão" />
+                  <MenuItem fx:id="miEdicao" mnemonicParsing="false" onAction="#onMiEdicaoAction" text="Edição" />
+                  <MenuItem fx:id="miExclusao" mnemonicParsing="false" onAction="#onMiExclusaoAction" text="Exclusão" />
+                  <MenuItem fx:id="miListagem" mnemonicParsing="false" onAction="#onMiListagemAction" text="Listagem" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="miSair" mnemonicParsing="false" onAction="#onMiSairAction" text="Sair" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Creditos">
+            <items>
+              <MenuItem fx:id="miDesenvolvedor" mnemonicParsing="false" onAction="#onMiDesenvolvedor" text="Desenvolvedor" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
 </AnchorPane>
