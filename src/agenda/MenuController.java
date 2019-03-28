@@ -4,8 +4,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
+import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -34,6 +38,7 @@ public class MenuController implements Initializable {
 
     @FXML
     public void onMiInclusaoAction(ActionEvent event) {
+        chamarTela("Inclusao");
     }
 
     @FXML
@@ -54,6 +59,17 @@ public class MenuController implements Initializable {
 
     @FXML
     public void onMiDesenvolvedor(ActionEvent event) {
+    }
+    
+    private void chamarTela(String arquivoView){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(arquivoView + ".fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(loader.load()));
+            stage.show();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Erro: "+ ex.getMessage());
+        }
     }
     
 }
